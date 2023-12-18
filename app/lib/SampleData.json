@@ -1,0 +1,396 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [],
+            "id": 975419,
+            "original_language": "en",
+            "original_title": "Marvel",
+            "overview": "The quintessential student film of 1969.",
+            "popularity": 2.653,
+            "poster_path": "/p6XFjLX7XDnAMCczOBCevVaZpFv.jpg",
+            "release_date": "1969-05-20",
+            "title": "Marvel",
+            "video": false,
+            "vote_average": 6.5,
+            "vote_count": 25
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/feSiISwgEpVzR1v3zv2n2AU4ANJ.jpg",
+            "genre_ids": [
+                878,
+                12,
+                28
+            ],
+            "id": 609681,
+            "original_language": "en",
+            "original_title": "The Marvels",
+            "overview": "Carol Danvers, aka Captain Marvel, has reclaimed her identity from the tyrannical Kree and taken revenge on the Supreme Intelligence. But unintended consequences see Carol shouldering the burden of a destabilized universe. When her duties send her to an anomalous wormhole linked to a Kree revolutionary, her powers become entangled with that of Jersey City super-fan Kamala Khan, aka Ms. Marvel, and Carol’s estranged niece, now S.A.B.E.R. astronaut Captain Monica Rambeau. Together, this unlikely trio must team up and learn to work in concert to save the universe.",
+            "popularity": 401.516,
+            "poster_path": "/Ag3D9qXjhJ2FUkrlJ0Cv1pgxqYQ.jpg",
+            "release_date": "2023-11-08",
+            "title": "The Marvels",
+            "video": false,
+            "vote_average": 6.502,
+            "vote_count": 702
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/bQl46uhGPTu9jnIRE9Ip2xOMc9M.jpg",
+            "genre_ids": [
+                10751,
+                12,
+                16,
+                14,
+                878
+            ],
+            "id": 382190,
+            "original_language": "ja",
+            "original_title": "ポケモン・ザ・ムービーXY&Z ボルケニオンと機巧のマギアナ",
+            "overview": "Ash meets the Mythical Pokémon Volcanion when it crashes down from the sky, creating a cloud of dust—and a mysterious force binds the two of them together! Volcanion despises humans and tries to get away, but it’s forced to drag Ash along as it continues its rescue mission. They arrive in a city of cogs and gears, where a corrupt official has stolen the ultimate invention: the Artificial Pokémon Magearna, created 500 years ago. He plans to use its mysterious power to take control of this mechanical kingdom! Can Ash and Volcanion work together to rescue Magearna? One of the greatest battles in Pokémon history is about to unfold!",
+            "popularity": 35.155,
+            "poster_path": "/j9TIzeMxNknVrBvgxzLqhIhxml4.jpg",
+            "release_date": "2016-07-16",
+            "title": "Pokémon the Movie: Volcanion and the Mechanical Marvel",
+            "video": false,
+            "vote_average": 6.7,
+            "vote_count": 165
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/qAzYK4YPSWDc7aa4R43LcwRIAyb.jpg",
+            "genre_ids": [
+                28,
+                12,
+                878
+            ],
+            "id": 299537,
+            "original_language": "en",
+            "original_title": "Captain Marvel",
+            "overview": "The story follows Carol Danvers as she becomes one of the universe’s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races. Set in the 1990s, Captain Marvel is an all-new adventure from a previously unseen period in the history of the Marvel Cinematic Universe.",
+            "popularity": 97.441,
+            "poster_path": "/AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg",
+            "release_date": "2019-03-06",
+            "title": "Captain Marvel",
+            "video": false,
+            "vote_average": 6.838,
+            "vote_count": 14859
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/oFSQEG1lJTTISj3QKB7cJ9ANkFw.jpg",
+            "genre_ids": [
+                16,
+                28,
+                10751
+            ],
+            "id": 1154598,
+            "original_language": "en",
+            "original_title": "LEGO Marvel Avengers: Code Red",
+            "overview": "The Avengers gather to celebrate their latest victory, but their celebration is quickly interrupted by the mysterious disappearance of Black Widow's father, Red Guardian. As the Avengers investigate, they discover that Red Guardian isn't the only one missing when they meet a dangerous new foe quite unlike anything they've ever encountered before.",
+            "popularity": 65.325,
+            "poster_path": "/rDzig50dj7VpLwJ7SThbamETK1G.jpg",
+            "release_date": "2023-10-26",
+            "title": "LEGO Marvel Avengers: Code Red",
+            "video": false,
+            "vote_average": 6.546,
+            "vote_count": 54
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/hkllv8JmO3UuRNKSiIfks5plhgi.jpg",
+            "genre_ids": [
+                16,
+                10751,
+                878
+            ],
+            "id": 509080,
+            "original_language": "en",
+            "original_title": "LEGO Marvel Super Heroes: Guardians of the Galaxy - The Thanos Threat",
+            "overview": "The Guardians are on a mission to deliver the Build Stone to the Avengers before the Ravagers, Thanos and his underlings steal it from them.",
+            "popularity": 18.22,
+            "poster_path": "/e5h1RlnQzjgEAh4s96k50S8XkKa.jpg",
+            "release_date": "2017-12-09",
+            "title": "LEGO Marvel Super Heroes: Guardians of the Galaxy - The Thanos Threat",
+            "video": false,
+            "vote_average": 7.0,
+            "vote_count": 47
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/phHZMvFlj5A03gzp7bhmQl8BInz.jpg",
+            "genre_ids": [
+                99
+            ],
+            "id": 1165500,
+            "original_language": "en",
+            "original_title": "Marvel Studios Assembled: The Making of Secret Invasion",
+            "overview": "Through in-depth interviews with cast and crew, and exclusive behind-the-scenes footage, Assembled uncovers how Marvel Studios’ “Secret Invasion” was born. Witness what it took to conjure the world of the show, and spend time with Samuel L. Jackson as he dons the patch once again to engage in the most baffling battle of Nick Fury’s career.",
+            "popularity": 21.882,
+            "poster_path": "/8YDNwj9gsAQlcHQALPtjJipoGx8.jpg",
+            "release_date": "2023-09-20",
+            "title": "Marvel Studios Assembled: The Making of Secret Invasion",
+            "video": false,
+            "vote_average": 4.619,
+            "vote_count": 21
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/6woewtQB41uPrfAiddBt523uSjB.jpg",
+            "genre_ids": [
+                99
+            ],
+            "id": 1192825,
+            "original_language": "en",
+            "original_title": "Marvel Studios Assembled: The Making of Loki Season 2",
+            "overview": "Through candid interviews with the creative minds behind the show, and exclusive on-set footage, discover how the talented team that powered \"Loki: Season 2\" raised the stakes for this latest MCU adventure. Witness imaginative costumes, elaborate environments, and far-out variants come to life, meet new allies and foes, and time-slip across the Multiverse.",
+            "popularity": 19.781,
+            "poster_path": "/l4dAm09HoxB5Dbm8IqDfrAKyMkS.jpg",
+            "release_date": "2023-11-22",
+            "title": "Marvel Studios Assembled: The Making of Loki Season 2",
+            "video": false,
+            "vote_average": 7.0,
+            "vote_count": 10
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/tMOWRvHc7sdsc7UNtK6Nfb0onWD.jpg",
+            "genre_ids": [
+                10751,
+                16,
+                28,
+                12
+            ],
+            "id": 576743,
+            "original_language": "en",
+            "original_title": "Marvel Rising: Chasing Ghosts",
+            "overview": "Hot on the trails of Sheath and Exile, Ghost-Spider teams up with the rest of the Secret Warriors to bring down the villains for good.",
+            "popularity": 24.849,
+            "poster_path": "/pufQvXrrxng95dT4kYlQtXn98kK.jpg",
+            "release_date": "2019-01-16",
+            "title": "Marvel Rising: Chasing Ghosts",
+            "video": false,
+            "vote_average": 7.0,
+            "vote_count": 41
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/yRbDw6Ly8MSQNDfLQNffHZuPZpS.jpg",
+            "genre_ids": [
+                16,
+                14
+            ],
+            "id": 372631,
+            "original_language": "en",
+            "original_title": "Marvel Super Hero Adventures: Frost Fight!",
+            "overview": "The holiday season gets extra chilly as Loki and the frost giant Ymir plot to conquer the world. Marvel heroes Iron Man, Captain America, Hulk, Thor and others must stop the villains from stealing Santa's power – if anyone can actually find the mysterious Mr. Claus. Fortunately, Rocket Raccoon and Groot are also hot on Santa's trail. Heroes, villains, elves and cosmic bounty hunters collide in an epic quest that leaves the fate of the holiday and the world in the balance.",
+            "popularity": 18.91,
+            "poster_path": "/2StM8Vavf7ukvuj9mxg1o7nKxmi.jpg",
+            "release_date": "2015-12-15",
+            "title": "Marvel Super Hero Adventures: Frost Fight!",
+            "video": true,
+            "vote_average": 5.9,
+            "vote_count": 48
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/r1Q3jyOpfbF3VDU52w8RzkTPbfe.jpg",
+            "genre_ids": [
+                12,
+                14,
+                878,
+                28
+            ],
+            "id": 76122,
+            "original_language": "en",
+            "original_title": "Marvel One-Shot: The Consultant",
+            "overview": "Agent Coulson informs Agent Sitwell that the World Security Council wishes Emil Blonsky to be released from prison to join the Avengers Initiative. As Nick Fury doesn't want to release Blonsky, the two agents decide to send a patsy to sabotage the meeting...",
+            "popularity": 36.884,
+            "poster_path": "/xqNLXUUvBnfVk6m3QFGGU0Grgs7.jpg",
+            "release_date": "2011-09-13",
+            "title": "Marvel One-Shot: The Consultant",
+            "video": false,
+            "vote_average": 6.329,
+            "vote_count": 485
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/p056WP3fMnEcSSYhiN1kV9AyNZW.jpg",
+            "genre_ids": [
+                10751,
+                16,
+                28,
+                35,
+                878
+            ],
+            "id": 592687,
+            "original_language": "en",
+            "original_title": "Marvel Rising: Battle of the Bands",
+            "overview": "On the day of Gwen’s “Battle of the Bands” competition, mysterious attacks force her and the Secret Warriors to investigate. Can they save the city and get Gwen to the concert on time?",
+            "popularity": 27.289,
+            "poster_path": "/mFL0EzAhEj3vscyGUMk6sT7pfQg.jpg",
+            "release_date": "2019-08-28",
+            "title": "Marvel Rising: Battle of the Bands",
+            "video": false,
+            "vote_average": 6.8,
+            "vote_count": 41
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/4oQo2pkNyv5zOqwAdwI2dSJTmEx.jpg",
+            "genre_ids": [
+                16,
+                28,
+                12,
+                10751
+            ],
+            "id": 592689,
+            "original_language": "en",
+            "original_title": "Marvel Rising: Playing with Fire",
+            "overview": "Inferno’s powers are stolen by a young and powerful villain and it’s up to the Secret Warriors to defeat their new foe and help their friend. But does Inferno even WANT his powers back? Meanwhile, America Chavez learns a lesson about friendship and family from teammate Ms. Marvel.",
+            "popularity": 22.692,
+            "poster_path": "/lelNkBnjIi4N1uQBV2TnODgS9UT.jpg",
+            "release_date": "2019-12-18",
+            "title": "Marvel Rising: Playing with Fire",
+            "video": false,
+            "vote_average": 6.6,
+            "vote_count": 41
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/10s2Czm8wQlY8a8h4XJoBFw7T1f.jpg",
+            "genre_ids": [
+                99
+            ],
+            "id": 1165487,
+            "original_language": "en",
+            "original_title": "Marvel Studios Assembled: The Making of the Guardians of the Galaxy Vol. 3",
+            "overview": "Join visionary director James Gunn and superstars such as Chris Pratt and Zoe Saldaña as they recount how “Guardians of the Galaxy Vol. 3” was conceived, shaped, and delivered to the world. And stand alongside the cast and crew in the emotional final moments of the shoot as they bid farewell to each other, and close this chapter in the saga of Peter Quill and his loveable band of misfit-warriors.",
+            "popularity": 23.628,
+            "poster_path": "/w9rY9CT7pI3pl6ATcAS7bXrIDc5.jpg",
+            "release_date": "2023-09-13",
+            "title": "Marvel Studios Assembled: The Making of the Guardians of the Galaxy Vol. 3",
+            "video": false,
+            "vote_average": 6.5,
+            "vote_count": 6
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/fBjMi7YcVN2lYaIIUR34ZbjzBjx.jpg",
+            "genre_ids": [
+                99
+            ],
+            "id": 1076032,
+            "original_language": "en",
+            "original_title": "Marvel Studios Assembled: The Making of Black Panther: Wakanda Forever",
+            "overview": "Follow the production of “Black Panther: Wakanda Forever” as the cast and crew take on the incredible challenge of remembering T’Challa with a chapter befitting the late king. Through intimate behind-the-scenes footage and interviews, watch Shuri take on the mantel of Wakanda’s hero and face a new foe from the ocean’s depths in Namor.",
+            "popularity": 15.408,
+            "poster_path": "/mYTPKWO7a4mHKLyksJgB8CMq9Qx.jpg",
+            "release_date": "2023-02-08",
+            "title": "Marvel Studios Assembled: The Making of Black Panther: Wakanda Forever",
+            "video": false,
+            "vote_average": 6.8,
+            "vote_count": 41
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/4Q7dw9Ok8xjj7iZB4vL2E1aqIw0.jpg",
+            "genre_ids": [
+                16,
+                28,
+                12,
+                878
+            ],
+            "id": 635687,
+            "original_language": "ja",
+            "original_title": "劇場版新幹線変形ロボシンカリオン 未来からきた神速のALFA-X",
+            "overview": "The new enemies, Nahane and Ohanefu, along with the mysterious new Giant Monstrous Beings appear from space to take over the Earth! Holding the key to these events is Shinkalion ALFA-X, which was secretly developed by the Ultra Evolution Institute...!? For Hayato and Team Shinkalion, who had been living in peace, the battle begins again.",
+            "popularity": 3.352,
+            "poster_path": "/tfWOshCwOcPCTos6UrFUM1Sp7Lk.jpg",
+            "release_date": "2019-12-01",
+            "title": "Shinkansen Henkei Robo Shinkalion The Movie: The Marvelous Fast ALFA-X That Comes From the Future",
+            "video": false,
+            "vote_average": 7.2,
+            "vote_count": 5
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/imkqp2S4ZXEGczb59ciF6IYVwnW.jpg",
+            "genre_ids": [
+                99
+            ],
+            "id": 939356,
+            "original_language": "en",
+            "original_title": "Marvel Studios Assembled: The Making of Eternals",
+            "overview": "Join director Chloe Zhao and the Cast of Eternals as they recount their experiences during the making of Marvel Studios’ most ambitious film to date. Discover how the ensemble cast felt stepping into their roles, filming in remote locations, and creating bonds that would help to create the on-screen relationships that span over 7,000 years.",
+            "popularity": 15.985,
+            "poster_path": "/fBJ5ZjFJ6IHQWz90SsW80PizVlF.jpg",
+            "release_date": "2022-02-16",
+            "title": "Marvel Studios Assembled: The Making of Eternals",
+            "video": false,
+            "vote_average": 7.3,
+            "vote_count": 47
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/mnJtSmQ52TF3vvtCAKH8EtQTaxt.jpg",
+            "genre_ids": [
+                99
+            ],
+            "id": 1026208,
+            "original_language": "en",
+            "original_title": "Marvel Studios Assembled: The Making of She-Hulk: Attorney at Law",
+            "overview": "Join the likes of Tatiana Maslany, Mark Ruffalo, Tim Roth, and Benedict Wong as they reveal how Marvel Studios’ She-Hulk: Attorney at Law was conceived and shaped. Discover what it took for She-Hulk’s creators to pull off the show’s tricky tone and deliver Marvel Studios’ first truly comedic series – one that boldly breaks the fourth wall to acknowledge its own audience, no less!",
+            "popularity": 17.184,
+            "poster_path": "/yhFN7yvskzm1Tsknkg46eQbQr9w.jpg",
+            "release_date": "2022-11-03",
+            "title": "Marvel Studios Assembled: The Making of She-Hulk: Attorney at Law",
+            "video": false,
+            "vote_average": 7.0,
+            "vote_count": 37
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/rGGRv7XXpDBVGD2BtbKWENfZOkf.jpg",
+            "genre_ids": [
+                10751,
+                16
+            ],
+            "id": 368304,
+            "original_language": "en",
+            "original_title": "LEGO Marvel Super Heroes: Avengers Reassembled!",
+            "overview": "The Avengers are forced to “party” with Ultron when he seeks to disassemble the team by taking control of Iron Man’s armor and enact a nefarious scheme to take over the world.",
+            "popularity": 21.213,
+            "poster_path": "/xUBZNoY7idPfqKZepnDEv7Qc8GC.jpg",
+            "release_date": "2015-11-16",
+            "title": "LEGO Marvel Super Heroes: Avengers Reassembled!",
+            "video": false,
+            "vote_average": 6.52,
+            "vote_count": 125
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/1RwWclnfcAcFG5n1qejtKRQDqE3.jpg",
+            "genre_ids": [
+                878,
+                14
+            ],
+            "id": 76535,
+            "original_language": "en",
+            "original_title": "Marvel One-Shot: A Funny Thing Happened on the Way to Thor's Hammer",
+            "overview": "Agent Coulson stops at a convenience store and deals with a coincidental robbery during his visit.",
+            "popularity": 13.111,
+            "poster_path": "/njrOqsmFH4pxBrhcoslqLfw2OGk.jpg",
+            "release_date": "2011-10-25",
+            "title": "Marvel One-Shot: A Funny Thing Happened on the Way to Thor's Hammer",
+            "video": false,
+            "vote_average": 6.819,
+            "vote_count": 414
+        }
+    ],
+    "total_pages": 12,
+    "total_results": 228
+}
