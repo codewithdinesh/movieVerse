@@ -1,10 +1,12 @@
 "use client"
 
 import Image from 'next/image'
-import MovieCard from './components/MovieCard'
+
 import { useEffect, useRef, useState } from 'react'
-import MovieDetails from './components/MovieDetails';
+
 import { useRouter, useSearchParams } from 'next/navigation';
+import MovieCard from './MovieCard';
+import MovieDetails from './MovieDetails';
 
 
 export default function Main() {
@@ -12,14 +14,13 @@ export default function Main() {
     // States
     const [searchInput, setSearchInput] = useState("");
     const [searchResult, setSearchResult] = useState(null);
+    const [isLoading, setLoading] = useState(false);
+    const [isError, setError] = useState(false);
+    const [searched, setSearched] = useState("");
+
 
     const searchParams = useSearchParams();
-    const router = useRouter()
-
     const searchId = searchParams.get("id");
-
-    // ScrollEffect
-    useScrollPosition();
 
     useEffect(() => {
 
@@ -90,15 +91,11 @@ export default function Main() {
 
     // Handling Search
     const onSearch = (event) => {
-
         event.preventDefault();
-
-        console.log(
-            searchInput
-        );
-
+        setLoading(true);
+        setSearched(searchInput)
         fetchMovie();
-
+        setLoading(false);
     }
 
     // Fetching Movies
@@ -112,12 +109,16 @@ export default function Main() {
             headers: headersList
         });
 
-        let data = await response.json();
+        if (!response.ok) {
+            setError(true);
+        } else {
 
-        setSearchResult(data.results)
 
+            let data = await response.json();
 
-        console.log(data);
+            setSearchResult(data.results)
+            // console.log(data);
+        }
     }
 
     // On Press Enter for Search
@@ -127,10 +128,8 @@ export default function Main() {
         }
     }
 
-
-    // View
     return (
-        <main className="container mx-auto p-5 md:p-20 border border-gray-400 rounded-md m-5">
+        <main className="container mx-auto rounded-md m-5">
 
             <div className="flex">
                 <input
@@ -146,6 +145,8 @@ export default function Main() {
                 <span></span>
             </div>
 
+
+            {/* Sidebar */}
             {searchId && searchResult && (
                 <MovieDetails
                     id={searchResult[searchId]?.id}
@@ -154,19 +155,35 @@ export default function Main() {
                     lang={searchResult[searchId]?.original_language}
                     poster={searchResult[searchId]?.poster_path}
                     index={searchId}
+                    release_date={searchResult[searchId]?.release_date}
                 />
             )}
 
-            <div className="z-0">
+            {/* Searched Text */}
+            {
+                searched && searchResult &&
+
+                <div className='py-2'>
+                    <p>Search results for <strong>
+
+                        {searched}
+                    </strong>
+                    </p>
+                </div>
+
+            }
+            <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'">
+
                 {searchResult?.map((movie, index) => (
                     <MovieCard
                         id={movie?.id}
-                        title={movie.title}
-                        desc={movie.overview}
-                        lang={movie.original_language}
-                        poster={movie.poster_path}
-                        key={movie.id}
+                        title={movie?.title}
+                        desc={movie?.overview}
+                        lang={movie?.original_language}
+                        poster={movie?.poster_path}
+                        key={movie?.id}
                         index={index}
+                        release_date={movie?.release_date}
                     />
                 ))}
             </div>
