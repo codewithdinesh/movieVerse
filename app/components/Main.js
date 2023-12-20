@@ -30,6 +30,7 @@ export default function Main() {
         event.preventDefault();
         router.push("/", { scroll: false });
         setSearched(searchInput)
+        setError(false);
         fetchMovie();
 
     }
@@ -144,6 +145,16 @@ export default function Main() {
     return (
         <main className="container mx-auto rounded-md m-5">
 
+
+            {/* Title */}
+            <div className='p-2 flex justify-center'>
+                <div>
+
+                    <h1 className=' text-red-600 font-bold font-serif text-5xl '>MovieVerse</h1>
+                    <p className=' font-extralight text-center '> Explore Movies</p>
+                </div>
+            </div>
+
             <div className="flex">
                 <input
                     onChange={(e) => {
@@ -201,22 +212,25 @@ export default function Main() {
                     Result Not Found
                 </div>
             }
+            <div className='flex justify-center  '>
 
-            <div className=" mt-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'">
+                <div className=" mt-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 '">
 
-                {searchResult?.map((movie, index) => (
-                    <MovieCard
-                        id={movie?.id}
-                        title={movie?.title}
-                        desc={movie?.overview}
-                        lang={movie?.original_language}
-                        poster={movie?.poster_path}
-                        key={movie?.id}
-                        index={index}
-                        release_date={movie?.release_date}
-                    />
-                ))}
+                    {searchResult?.map((movie, index) => (
+                        <MovieCard
+                            id={movie?.id}
+                            title={movie?.title}
+                            desc={movie?.overview}
+                            lang={movie?.original_language}
+                            poster={movie?.poster_path}
+                            key={movie?.id}
+                            index={index}
+                            release_date={movie?.release_date}
+                        />
+                    ))}
+                </div>
             </div>
+
         </main>
     )
 }
