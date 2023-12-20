@@ -18,12 +18,65 @@ export default function Main() {
     const [isError, setError] = useState(false);
     const [searched, setSearched] = useState("");
 
-
     const searchParams = useSearchParams();
     const searchId = searchParams.get("id");
 
-    useEffect(() => {
+    const router = useRouter();
 
+    useEffect(() => { setSampleOutput() }, [])
+
+    // Handling Search
+    const onSearch = (event) => {
+        event.preventDefault();
+        router.push("/", { scroll: false });
+        setSearched(searchInput)
+        fetchMovie();
+
+    }
+
+    // Fetching Movies
+    const fetchMovie = async () => {
+        setLoading(true);
+
+        let headersList = {
+            "Accept": "*/*"
+        }
+
+        let response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${searchInput}&api_key=783932c629416160c930effc71e0547b`, {
+            method: "GET",
+            headers: headersList
+        });
+
+        if (!response.ok) {
+            setError(true);
+
+        } else {
+
+
+            let data = await response.json();
+
+            setSearchResult(data.results)
+
+            if (data.results.length == 0) {
+
+                setError(true);
+            }
+            console.log(data);
+        }
+        setLoading(false);
+    }
+
+    // On Press Enter for Search
+    const onEnterSearch = (event) => {
+        if (event.key === 'Enter') {
+            onSearch(event);
+        }
+    }
+
+
+    // Set sample output
+
+    const setSampleOutput = () => {
         setSearchResult([
 
             {
@@ -86,46 +139,6 @@ export default function Main() {
             }
         ])
 
-
-    }, [])
-
-    // Handling Search
-    const onSearch = (event) => {
-        event.preventDefault();
-        setLoading(true);
-        setSearched(searchInput)
-        fetchMovie();
-        setLoading(false);
-    }
-
-    // Fetching Movies
-    const fetchMovie = async () => {
-        let headersList = {
-            "Accept": "*/*"
-        }
-
-        let response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${searchInput}&api_key=783932c629416160c930effc71e0547b`, {
-            method: "GET",
-            headers: headersList
-        });
-
-        if (!response.ok) {
-            setError(true);
-        } else {
-
-
-            let data = await response.json();
-
-            setSearchResult(data.results)
-            // console.log(data);
-        }
-    }
-
-    // On Press Enter for Search
-    const onEnterSearch = (event) => {
-        if (event.key === 'Enter') {
-            onSearch(event);
-        }
     }
 
     return (
@@ -138,7 +151,7 @@ export default function Main() {
                         setSearchInput(e.target.value);
                     }}
                     type="search"
-                    className="flex-1 p-3 w-full border border-gray-400 rounded-md focus:outline-none focus:border-blue-500 focus:border-2"
+                    className="flex-1 m-1 p-3 w-full border border-gray-400 rounded-md focus:outline-none focus:border-blue-500 focus:border-2"
                     placeholder="Search Movie"
                     onKeyDown={onEnterSearch}
                 />
@@ -147,23 +160,25 @@ export default function Main() {
 
 
             {/* Sidebar */}
-            {searchId && searchResult && (
-                <MovieDetails
-                    id={searchResult[searchId]?.id}
-                    title={searchResult[searchId]?.title}
-                    desc={searchResult[searchId]?.overview}
-                    lang={searchResult[searchId]?.original_language}
-                    poster={searchResult[searchId]?.poster_path}
-                    index={searchId}
-                    release_date={searchResult[searchId]?.release_date}
-                />
-            )}
+            {
+                searchId && searchResult && searchId < searchResult.length && (
+                    <MovieDetails
+                        id={searchResult[searchId]?.id}
+                        title={searchResult[searchId]?.title}
+                        desc={searchResult[searchId]?.overview}
+                        lang={searchResult[searchId]?.original_language}
+                        poster={searchResult[searchId]?.poster_path}
+                        index={searchId}
+                        release_date={searchResult[searchId]?.release_date}
+                        maxIndex={searchResult?.length}
+                    />
+                )}
 
             {/* Searched Text */}
             {
                 searched && searchResult &&
 
-                <div className='py-2'>
+                <div className='py-2 m-1'>
                     <p>Search results for <strong>
 
                         {searched}
@@ -172,7 +187,22 @@ export default function Main() {
                 </div>
 
             }
-            <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'">
+
+            {isLoading && searched && (
+                <div className="flex m-1 my-3 align-middle place-items-center">
+                    <div className="animate-spin rounded-full h-8 w-8 border-t-8 border-blue-500 "></div>
+                    <div className='font-semibold animate-pulse p-1 '>Loading</div>
+                </div>
+            )}
+
+            {/* Error */}
+            {
+                isError && <div className=' bg-red-100 p-2 m-1 border border-red-600 rounded-md mt-2 text-black '>
+                    Result Not Found
+                </div>
+            }
+
+            <div className=" mt-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'">
 
                 {searchResult?.map((movie, index) => (
                     <MovieCard

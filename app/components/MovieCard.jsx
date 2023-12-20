@@ -16,10 +16,13 @@ const MovieCard = ({ title, id, lang, desc, poster, release_date, index }) => {
 
                     {/* Movie Details */}
                     {/* Title */}
-                    <div className='p-4'>
-                        <h1 className='font-bold text-lg whitespace-normal mb-2'>{title}</h1>
+                    <div className='p-2'>
+                        <h1 className=' font-medium text-lg mb-2 whitespace-nowrap overflow-clip'>{title}</h1>
                         <ChipItem data={lang} />
-                        <ChipItem data={release_date} />
+                        {
+                            release_date &&
+                            <ChipItem data={release_date} />
+                        }
                     </div>
                 </div>
             </Link>
