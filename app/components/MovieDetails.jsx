@@ -69,7 +69,15 @@ const MovieDetails = ({ title, id, lang, desc, poster, release_date, index, maxI
             <div className=' flex  flex-col justify-center justify-items-center justify-self-center'>
 
                 {/* Poster */}
-                <img src={"https://image.tmdb.org/t/p/w500" + poster} className=' md:w-auto rounded-md w-2/4  flex-1 justify-center' />
+
+                {
+                    poster ?
+
+                        <img src={"https://image.tmdb.org/t/p/w500" + poster} className=' md:w-auto rounded-md w-2/4  flex-1 justify-center' />
+                        :
+                        <img src={"/images/not-found.png"} className=' md:w-auto rounded-md w-2/4  flex-1 justify-center' />
+
+                }
 
                 {/* Movie Details */}
                 <div className='w-full h-full rounded-md  p-2'>
