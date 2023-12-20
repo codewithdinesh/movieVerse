@@ -2,7 +2,10 @@
 
 import Image from 'next/image'
 import MovieCard from './components/MovieCard'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import MovieDetails from './components/MovieDetails';
+import { useRouter, useSearchParams } from 'next/navigation';
+import useScrollPosition from './components/hooks/useScrollPosition';
 
 export default function Home() {
 
@@ -10,7 +13,50 @@ export default function Home() {
   const [searchInput, setSearchInput] = useState("");
   const [searchResult, setSearchResult] = useState(null);
 
+  const scrollPositionRef = useRef(0);
+
+  const searchParams = useSearchParams();
+  const router = useRouter()
+
+  const searchId = searchParams.get("id");
+
+  useScrollPosition(({ currPos }) => {
+    // Update the scroll position whenever it changes
+    scrollPositionRef.current = currPos.y;
+  });
+
+  // ScrollEffect
+  useScrollPosition();
+
   useEffect(() => {
+    // Store the current scroll position when navigating to the MovieDetails page
+    const handleRouteChange = () => {
+      if (searchId) {
+        sessionStorage.setItem('scrollPosition', window.scrollY);
+      }
+    };
+
+    // Attach the event listener for route changes
+    router.events.on('routeChangeStart', handleRouteChange);
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, [searchId]);
+
+  useEffect(() => {
+    // Restore the scroll position when the component mounts
+    if (searchId && sessionStorage.getItem('scrollPosition')) {
+      const scrollPosition = parseInt(sessionStorage.getItem('scrollPosition'), 10);
+      window.scrollTo(0, scrollPosition);
+    }
+  }, [searchId]);
+
+  useEffect(() => {
+
+    window.scrollTo(0, scrollPositionRef.current);
+
     setSearchResult([
 
       {
@@ -72,9 +118,29 @@ export default function Home() {
         "vote_count": 165
       }
     ])
-  }, [])
-  
 
+
+  }, [])
+
+
+
+
+  const tempData = {
+    "adult": false,
+    "backdrop_path": null,
+    "genre_ids": [],
+    "id": 975419,
+    "original_language": "en",
+    "original_title": "Marvel",
+    "overview": "The quintessential student film of 1969.",
+    "popularity": 2.653,
+    "poster_path": "/p6XFjLX7XDnAMCczOBCevVaZpFv.jpg",
+    "release_date": "1969-05-20",
+    "title": "Marvel",
+    "video": false,
+    "vote_average": 6.5,
+    "vote_count": 25
+  };
 
   // Handling Search
   const onSearch = (event) => {
@@ -104,7 +170,7 @@ export default function Home() {
 
     setSearchResult(data.results)
 
-   
+
     console.log(data);
 
 
@@ -120,39 +186,46 @@ export default function Home() {
 
   // View
   return (
-    <main className=" container mx-auto p-5 md:p-20 border border-gray-400 rounded-2xl m-5 ">
+    <main className="container mx-auto p-5 md:p-20 border border-gray-400 rounded-md m-5">
 
-
-      <div className='flex'>
+      <div className="flex">
         <input
-          onChange={e => {
+          onChange={(e) => {
             e.preventDefault();
             setSearchInput(e.target.value);
-          }
-          }
-          type='search'
-          className='flex-1 p-3 w-full border border-gray-400 rounded-2xl focus:outline-none focus:border-blue-500 focus:b-2'
-          placeholder='Search Movie'
-          onKeyDown={
-            onEnterSearch
-          }
-
+          }}
+          type="search"
+          className="flex-1 p-3 w-full border border-gray-400 rounded-md focus:outline-none focus:border-blue-500 focus:border-2"
+          placeholder="Search Movie"
+          onKeyDown={onEnterSearch}
         />
-        <span>
-
-        </span>
-
+        <span></span>
       </div>
 
-      {
+      {searchId && searchResult && (
+        <MovieDetails
+          id={searchResult[searchId]?.id}
+          title={searchResult[searchId]?.title}
+          desc={searchResult[searchId]?.overview}
+          lang={searchResult[searchId]?.original_language}
+          poster={searchResult[searchId]?.poster_path}
+          index={searchId}
+        />
+      )}
 
-        searchResult?.map(movie => {
-          return < MovieCard id={movie?.id} title={movie.title} desc={movie.overview} lang={movie.original_language} poster={movie.poster_path} key={movie.id} />
-        })
-
-
-
-      }
+      <div className="z-0">
+        {searchResult?.map((movie, index) => (
+          <MovieCard
+            id={movie?.id}
+            title={movie.title}
+            desc={movie.overview}
+            lang={movie.original_language}
+            poster={movie.poster_path}
+            key={movie.id}
+            index={index}
+          />
+        ))}
+      </div>
     </main>
   )
 }

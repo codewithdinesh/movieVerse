@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import React from 'react'
 
-const MovieCard = ({ title, id, lang, desc, poster, release_date }) => {
+const MovieCard = ({ title, id, lang, desc, poster, release_date, index }) => {
     return (
         // w-1/3 
         <div className=' p-1 rounded-lg shadow-md m-1'>
 
-            <Link href={"#"}>
+            <Link href={"?id=" + index}>
 
                 <div className=' block md:flex'>
                     {/* Poster */}
