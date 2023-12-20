@@ -6,7 +6,7 @@ import ChipItem from './ChipItem';
 
 const MovieDetails = ({ title, id, lang, desc, poster, release_date, index, maxIndex }) => {
 
-
+    // states
     const [isVisible, setIsVisible] = useState(true);
     const router = useRouter();
 
@@ -25,6 +25,7 @@ const MovieDetails = ({ title, id, lang, desc, poster, release_date, index, maxI
     }
 
 
+    // to handle on previous navigation
     const onPrevious = () => {
 
         if (index > 0) {
@@ -34,6 +35,7 @@ const MovieDetails = ({ title, id, lang, desc, poster, release_date, index, maxI
         router.push(`?id=${index}`, { scroll: false })
     }
 
+    // to handle on next navigation
     const onNext = () => {
 
         if (index < maxIndex - 1) {
@@ -44,12 +46,12 @@ const MovieDetails = ({ title, id, lang, desc, poster, release_date, index, maxI
     }
 
 
-
     return (
         <div
             className='shadow-lg shadow-black bg-slate-100 transition-all p-5 overflow-y-auto overflow-x-hidden fixed top-0 right-0 bottom-0 z-50 justify-center items-center w-full md:max-w-sm  max-h-full   min-h-screen'
         >
 
+            {/* Close Button */}
             <div className=''>
 
                 <button type="button"
@@ -73,7 +75,7 @@ const MovieDetails = ({ title, id, lang, desc, poster, release_date, index, maxI
                 {
                     poster ?
 
-                        <img src={"https://image.tmdb.org/t/p/w500" + poster} className=' md:w-auto rounded-md w-2/4  flex-1 justify-center' />
+                        <img src={process.env.NEXT_PUBLIC_IMAGE_HOST_URL + poster} className=' md:w-auto rounded-md w-2/4  flex-1 justify-center' />
                         :
                         <img src={"/images/not-found.png"} className=' md:w-auto rounded-md w-2/4  flex-1 justify-center' />
 
@@ -82,7 +84,7 @@ const MovieDetails = ({ title, id, lang, desc, poster, release_date, index, maxI
                 {/* Movie Details */}
                 <div className='w-full h-full rounded-md  p-2'>
 
-                    {/* Title */}
+                    {/* Movie Title */}
                     <div className=' '>
 
                         <h1 className=' font-bold text-lg mt-2'>{title}</h1>
@@ -95,27 +97,32 @@ const MovieDetails = ({ title, id, lang, desc, poster, release_date, index, maxI
                     </div>
 
 
+                    {/* Movie Overview */}
                     <div className='my-2' >
                         <p className=' font-semibold'>Overview : </p>
                         <p className='font-light'> {desc || "Not Available"} </p>
 
                     </div>
 
+                    {/* Movie Language */}
                     <div className='py-2'>
                         <span className=' font-semibold'>Language: </span>
                         <ChipItem data={lang} />
                     </div>
 
+                    {/* Movie Release Date */}
                     <div className='py-2 '>
                         <span className=' font-semibold'>Released On:  </span>
                         <ChipItem data={release_date} />
                     </div>
                 </div>
-
-
             </div>
 
+            {/* Navigation - Next & Previuos */}
+
             <div className="flex justify-between mt-4">
+
+                {/* Preious Navigation */}
                 <button
                     onClick={onPrevious}
                     disabled={index == 0}
@@ -125,7 +132,8 @@ const MovieDetails = ({ title, id, lang, desc, poster, release_date, index, maxI
                         <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
                 </button>
-                {console.log(index === maxIndex - 1)}
+
+                {/* Next Navigation */}
                 <button
                     onClick={onNext}
                     disabled={index == maxIndex - 1}

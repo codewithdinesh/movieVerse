@@ -1,12 +1,11 @@
 "use client"
 
-import Image from 'next/image'
-
 import { useEffect, useRef, useState } from 'react'
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import MovieCard from './MovieCard';
 import MovieDetails from './MovieDetails';
+import Link from 'next/link';
 
 
 export default function Main() {
@@ -18,11 +17,13 @@ export default function Main() {
     const [isError, setError] = useState(false);
     const [searched, setSearched] = useState("");
 
+    // Extracting Query Id from URL
     const searchParams = useSearchParams();
     const searchId = searchParams.get("id");
 
     const router = useRouter();
 
+    // Fetching sample output
     useEffect(() => { setSampleOutput() }, [])
 
     // Handling Search
@@ -43,7 +44,7 @@ export default function Main() {
             "Accept": "*/*"
         }
 
-        let response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${searchInput}&api_key=783932c629416160c930effc71e0547b`, {
+        let response = await fetch(`${process.env.NEXT_PUBLIC_HOST_URL}search/movie?query=${searchInput}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`, {
             method: "GET",
             headers: headersList
         });
@@ -52,18 +53,18 @@ export default function Main() {
             setError(true);
 
         } else {
-
-
             let data = await response.json();
-
+            // Set search result to the Hook
             setSearchResult(data.results)
 
+            // If no result found
             if (data.results.length == 0) {
 
                 setError(true);
             }
             console.log(data);
         }
+        // When loading completed
         setLoading(false);
     }
 
@@ -146,15 +147,16 @@ export default function Main() {
         <main className="container mx-auto rounded-md m-5">
 
 
-            {/* Title */}
+            {/* Title and tagline */}
             <div className='p-2 flex justify-center'>
-                <div>
+                <Link href={"/#"}>
 
                     <h1 className=' text-red-600 font-bold font-serif text-5xl '>MovieVerse</h1>
                     <p className=' font-extralight text-center '> Explore Movies</p>
-                </div>
+                </Link>
             </div>
 
+            {/* SearchBox */}
             <div className="flex">
                 <input
                     onChange={(e) => {
@@ -199,6 +201,7 @@ export default function Main() {
 
             }
 
+            {/* Loading Status */}
             {isLoading && searched && (
                 <div className="flex m-1 my-3 align-middle place-items-center">
                     <div className="animate-spin rounded-full h-8 w-8 border-t-8 border-blue-500 "></div>
@@ -212,6 +215,9 @@ export default function Main() {
                     Result Not Found
                 </div>
             }
+
+
+            {/* List of movies */}
             <div className='flex justify-center  '>
 
                 <div className=" mt-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 '">
